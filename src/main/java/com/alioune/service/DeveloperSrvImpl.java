@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alioune.dao.DeveloperDao;
-import com.alioune.dao.DeveloperLangageDao;
-import com.alioune.dao.LangageDao;
+import com.alioune.dal.DeveloperRepository;
+import com.alioune.dal.DeveloperLangageRepository;
+import com.alioune.dal.LangageRepository;
 import com.alioune.entities.Developer;
 import com.alioune.entities.DeveloperLangage;
 import com.alioune.entities.Langage;
@@ -19,11 +19,11 @@ import com.alioune.utils.DeveloperMapper;
 public class DeveloperSrvImpl implements DeveloperSrv {
 
 	@Autowired
-	private DeveloperDao developerDao;
+	private DeveloperRepository developerDao;
 	@Autowired
-	private LangageDao langageDao;
+	private LangageRepository langageDao;
 	@Autowired
-	private DeveloperLangageDao developerLangageDao;
+	private DeveloperLangageRepository developerLangageDao;
 
 	@Override
 	public List<Developer> addDeveloper(List<Developer> devs) {

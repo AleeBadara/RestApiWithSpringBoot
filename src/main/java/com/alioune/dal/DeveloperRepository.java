@@ -1,4 +1,4 @@
-package com.alioune.dao;
+package com.alioune.dal;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.alioune.entities.Developer;
 
 @Repository
-public interface DeveloperDao extends CrudRepository<Developer, String> {
+public interface DeveloperRepository extends CrudRepository<Developer, String> {
 
 }

@@ -1,4 +1,4 @@
-package com.example.repository;
+package com.alioune.test.repository;
 
 import static org.junit.Assert.assertEquals;
 
@@ -12,15 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.alioune.dao.DeveloperDao;
+import com.alioune.dal.DeveloperRepository;
 import com.alioune.entities.Developer;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DeveloperRepository {
+public class DeveloperRepositoryTest {
 
 	@Autowired
-	private DeveloperDao developerDao;
+	private DeveloperRepository developerDao;
 
 	@Test
 	public void testAddDeveloper() {

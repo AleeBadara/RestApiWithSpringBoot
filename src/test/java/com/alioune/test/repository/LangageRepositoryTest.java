@@ -1,4 +1,4 @@
-package com.example.repository;
+package com.alioune.test.repository;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,16 +13,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.alioune.dao.LangageDao;
+import com.alioune.dal.LangageRepository;
 import com.alioune.entities.Langage;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class LangageRepository {
+public class LangageRepositoryTest {
 	Langage lang;
 	String idLang;
 	@Autowired
-	private LangageDao langageDao;
+	private LangageRepository langageDao;
 
 	@Before
 	public void setUp() {

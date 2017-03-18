@@ -6,14 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alioune.dao.LangageDao;
+import com.alioune.dal.LangageRepository;
 import com.alioune.entities.Langage;
 
 @Service
 public class LangageSrvImpl implements LangageSrv {
 
 	@Autowired
-	private LangageDao langageDao;
+	private LangageRepository langageDao;
 
 	@Override
 	public List<Langage> add(List<Langage> langs) {

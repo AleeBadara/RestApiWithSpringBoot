@@ -1,4 +1,4 @@
-package com.alioune.dao;
+package com.alioune.dal;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.alioune.entities.Langage;
 
 @Repository
-public interface LangageDao extends CrudRepository<Langage, String> {
+public interface LangageRepository extends CrudRepository<Langage, String> {
 
 	/**
 	 * Recherche les langages par libellé

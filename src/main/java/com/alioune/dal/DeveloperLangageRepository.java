@@ -1,4 +1,4 @@
-package com.alioune.dao;
+package com.alioune.dal;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.alioune.entities.DeveloperLangage;
 
 @Repository
-public interface DeveloperLangageDao extends CrudRepository<DeveloperLangage, Integer> {
+public interface DeveloperLangageRepository extends CrudRepository<DeveloperLangage, Integer> {
 
 	/**
 	 * Récupére les identifiants des développeurs d'un langage
