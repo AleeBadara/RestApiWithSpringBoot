@@ -22,8 +22,10 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("CATA JCDECAUX").description("DESCRIPTION").version("1.0.0")
-				.contact(new Contact("Alioune Badara MBAYE", "ABM", "mbaye.alioune.badara@gmail.com")).build();
+		return new ApiInfoBuilder().title("Rest Api With Spring boot").version("1.0.0")
+				.contact(new Contact("Alioune Badara MBAYE", "https://twitter.com/Iam_Alioune",
+						"mbaye.alioune.badara@gmail.com"))
+				.build();
 	}
 
 }
