@@ -1,7 +1,7 @@
 # RestApiWithSpringBoot
 # Description
 
-Services Rest avec Spring Boot permettant:
+Services Rest avec Spring Boot permettant de:
 - créer des développeurs,
 - modifier les informations d'un développeur,
 - créer des langages de programmation,
@@ -10,8 +10,11 @@ Services Rest avec Spring Boot permettant:
 
 # Installation
 1-Cloner ou télécharger le projet dans votre machine
+
 2-Avec le CLI, naviguer sur le répertoire où vous avez déposé le projet
+
 3-Exécuter la commande suivante pour démarrer les services: mvn spring-boot:run
+
 4-Vérifier que les services sont bien démarrés en allant sur l'adresse suivante: http://localhost:8080/swagger-ui.html. Vous devez voir tous les services exposés.
 
 # Test
