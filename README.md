@@ -19,8 +19,11 @@ Services Rest avec Spring Boot permettant de:
 
 # Test
 Pour tester, aller sur l'adresse suivante: http://localhost:8080/swagger-ui.html. 
+
 1-Cliquer un service donné
+
 2-Remplir les paramétres ou le body du service si nécessaire.
+
 3-Cliquer sur Try it out
 
 # Tags
