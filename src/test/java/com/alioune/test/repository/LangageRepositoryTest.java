@@ -34,7 +34,7 @@ public class LangageRepositoryTest {
 	}
 
 	@Test
-	public void testAddLangage() {		
+	public void testAddLangage() {
 		List<Langage> langs = new ArrayList<Langage>();
 		langageDao.findAll().forEach(langs::add);
 		;
@@ -43,13 +43,14 @@ public class LangageRepositoryTest {
 
 	@Test
 	public void testFindById() {
-		//langageDao.save(lang);
 		Langage res = langageDao.findOne(idLang);
 		assertEquals("Java", res.getLibelle());
 	}
-	
+
 	@Test
 	public void findByLibelle() {
+		langageDao.deleteAll();
+		langageDao.save(lang);
 		List<Langage> res = langageDao.findByLibelleContainingIgnoreCase("Java");
 		assertEquals(1, res.size());
 	}

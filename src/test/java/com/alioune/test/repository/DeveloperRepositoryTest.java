@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,20 +20,37 @@ import com.alioune.entities.Developer;
 @SpringBootTest
 public class DeveloperRepositoryTest {
 
+	Developer dev;
+	String idDev;
+
+	@Before
+	public void setUp() {
+		dev = new Developer();
+		idDev = UUID.randomUUID().toString();
+		dev.setId(idDev);
+		dev.setAdresse("Ground Zero");
+		dev.setNom("Doe");
+		dev.setPrenom("John");
+		developerDao.save(dev);
+	}
+
 	@Autowired
 	private DeveloperRepository developerDao;
 
 	@Test
 	public void testAddDeveloper() {
-		Developer dev = new Developer();
-		dev.setId(UUID.randomUUID().toString());
-		dev.setNom("Test");
-		dev.setPrenom("Test");
-		developerDao.save(dev);
 		List<Developer> devs = new ArrayList<Developer>();
 		developerDao.findAll().forEach(devs::add);
 		;
-		assertEquals("Test", devs.get(0).getNom());
+		assertEquals("John", devs.get(0).getPrenom());
+	}
+
+	@Test
+	public void testUpdateDeveloper() {
+		dev.setPrenom("Jane");
+		developerDao.save(dev);
+		Developer result = developerDao.findOne(idDev);
+		assertEquals("Jane", result.getPrenom());
 	}
 
 }
