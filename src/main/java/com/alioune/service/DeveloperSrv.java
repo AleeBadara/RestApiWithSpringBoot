@@ -8,7 +8,7 @@ import com.alioune.model.DeveloperDto;
 public interface DeveloperSrv {
 
 	/**
-	 * Sauvegarde un développeur
+	 * Sauvegarde un ou des développeur(s) en bdd
 	 * 
 	 * @param dev
 	 * @return
@@ -47,4 +47,13 @@ public interface DeveloperSrv {
 	 * @return
 	 */
 	List<DeveloperDto> findAll();
+
+	/**
+	 * Recherche un développeur en fonction de son identifiant
+	 * 
+	 * @param idDev
+	 *            identifiant du développeur recherché
+	 * @return
+	 */
+	Developer findDeveloperById(String idDev);
 }

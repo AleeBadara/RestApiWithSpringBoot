@@ -16,7 +16,7 @@ public class LangageSrvImpl implements LangageSrv {
 	private LangageRepository langageDao;
 
 	@Override
-	public List<Langage> add(List<Langage> langs) {
+	public List<Langage> addLangage(List<Langage> langs) {
 		List<Langage> results = new ArrayList<Langage>();
 		for (Langage lang : langs) {
 			langageDao.save(lang);

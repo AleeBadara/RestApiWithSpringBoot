@@ -14,7 +14,8 @@ public interface LangageRepository extends CrudRepository<Langage, String> {
 	 * Recherche les langages par libellé
 	 * 
 	 * @param libelle
-	 * @return
+	 *            d'un langage
+	 * @return collection contenant les résultats de la recherche
 	 */
 	List<Langage> findByLibelleContainingIgnoreCase(String libelle);
 

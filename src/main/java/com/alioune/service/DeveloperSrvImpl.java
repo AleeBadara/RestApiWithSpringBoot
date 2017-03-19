@@ -57,8 +57,18 @@ public class DeveloperSrvImpl implements DeveloperSrv {
 
 	@Override
 	public List<DeveloperDto> findDevByIdLangage(String idLangage) {
-		// TODO Auto-generated method stub
-		return null;
+		List<DeveloperDto> results = new ArrayList<DeveloperDto>();
+		Langage lang = langageDao.findOne(idLangage);
+		if (lang != null) {
+			List<DeveloperLangage> devsLangs = developerLangageDao.findByIdLang(lang.getId());
+			for (DeveloperLangage devLang : devsLangs) {
+				Developer dev = developerDao.findOne(devLang.getIdDev());
+				DeveloperDto devDto = DeveloperMapper.transformEntityToDto(dev);
+				devDto.getLangs().add(lang);
+				results.add(devDto);
+			}
+		}
+		return results;
 	}
 
 	@Override
@@ -76,5 +86,10 @@ public class DeveloperSrvImpl implements DeveloperSrv {
 			results.add(dto);
 		}
 		return results;
+	}
+
+	@Override
+	public Developer findDeveloperById(String idDev) {
+		return developerDao.findOne(idDev);
 	}
 }

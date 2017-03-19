@@ -12,12 +12,13 @@ public interface LangageSrv {
 	 * @param langs
 	 * @return
 	 */
-	List<Langage> add(List<Langage> langs);
+	List<Langage> addLangage(List<Langage> langs);
 
 	/**
 	 * Récupére un langage par son identifiant
 	 * 
 	 * @param id
+	 *            identifiant du langage
 	 * @return
 	 */
 	Langage findById(String id);
@@ -26,10 +27,16 @@ public interface LangageSrv {
 	 * Récupére les langages avec le libellé passé en paramétre
 	 * 
 	 * @param lib
-	 * @return
+	 *            libellé du langage rechercé
+	 * @return collection correspondant à la recherche
 	 */
 	List<Langage> findByLibelle(String lib);
 
+	/**
+	 * Renvoie tous les langages
+	 * 
+	 * @return
+	 */
 	List<Langage> getAll();
 
 }

@@ -15,12 +15,17 @@ import com.alioune.entities.Langage;
 import com.alioune.service.LangageSrv;
 import com.alioune.utils.Constantes;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+@Api(description = "Opérations sur le langage")
 @RestController
 @RequestMapping("/api/langage")
 public class LangageController {
 	@Autowired
 	private LangageSrv langageSrv;
 
+	@ApiOperation(value = "Permet d'ajouter un langage")
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "addLang", method = RequestMethod.POST)
 	public ResponseEntity<List<Langage>> addLangage(@RequestBody List<Langage> langs) {
@@ -29,13 +34,14 @@ public class LangageController {
 			lang.setId(UUID.randomUUID().toString());
 		}
 		try {
-			results = langageSrv.add(langs);
+			results = langageSrv.addLangage(langs);
 		} catch (Exception e) {
 			return new ResponseEntity(Constantes.ADD_ERROR, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<List<Langage>>(results, HttpStatus.OK);
 	}
 
+	@ApiOperation(value = "Renvoie tous les langages")
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "getAll", method = RequestMethod.GET)
 	public ResponseEntity<List<Langage>> getAllLangages() {
